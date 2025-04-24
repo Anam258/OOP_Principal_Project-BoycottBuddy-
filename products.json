@@ -1,0 +1,102 @@
+{
+  "cocacola": {
+    "israeli": true,
+    "alternative": "Pakola"
+  },
+  "pepsi": {
+    "israeli": true,
+    "alternative": "Amrat Cola"
+  },
+  "nestle": {
+    "israeli": true,
+    "alternative": "Nurpur"
+  },
+  "lays": {
+    "israeli": true,
+    "alternative": "Super Crisp"
+  },
+  "kfc": {
+    "israeli": true,
+    "alternative": "JFC - Karachi"
+  },
+  "mcdonalds": {
+    "israeli": true,
+    "alternative": "OPTP"
+  },
+  "starbucks": {
+    "israeli": true,
+    "alternative": "Butler’s Chocolate Café"
+  },
+  "maggi": {
+    "israeli": true,
+    "alternative": "National Noodles"
+  },
+  "doritos": {
+    "israeli": true,
+    "alternative": "Kolson Slanty"
+  },
+  "oreos": {
+    "israeli": true,
+    "alternative": "Sooper Chocolate Biscuits"
+  },
+  "kitkat": {
+    "israeli": true,
+    "alternative": "Candyland NOW"
+  },
+  "milkybar": {
+    "israeli": true,
+    "alternative": "Candyland Choc"
+  },
+  "dairy milk": {
+    "israeli": true,
+    "alternative": "Sonnet"
+  },
+  "colgate": {
+    "israeli": true,
+    "alternative": "Dentonic"
+  },
+  "pantene": {
+    "israeli": true,
+    "alternative": "Hemani Shampoo"
+  },
+  "head and shoulders": {
+    "israeli": true,
+    "alternative": "Saeed Ghani Anti-Dandruff"
+  },
+  "aerial": {
+    "israeli": true,
+    "alternative": "Brite"
+  },
+  "pampers": {
+    "israeli": true,
+    "alternative": "Canbebe"
+  },
+  "comfort": {
+    "israeli": true,
+    "alternative": "Max Wash Fabric Softener"
+  },
+  "nescafe": {
+    "israeli": true,
+    "alternative": "Pakola Café"
+  },
+  "danone": {
+    "israeli": true,
+    "alternative": "Nurpur Yogurt"
+  },
+  "dove": {
+    "israeli": true,
+    "alternative": "Medicam Soap"
+  },
+  "vaseline": {
+    "israeli": true,
+    "alternative": "Hemani Petroleum Jelly"
+  },
+  "loreal": {
+    "israeli": true,
+    "alternative": "Saeed Ghani Cosmetics"
+  },
+  "rexona": {
+    "israeli": true,
+    "alternative": "Hemani Deo"
+  }
+}
