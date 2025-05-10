@@ -1,82 +1,63 @@
 import streamlit as st
 from checker import ProductDatabase, ProductChecker
+import os
+
 
 class BycottBuddyApp:
     def __init__(self):
         self.db = ProductDatabase("products.json")
         self.checker = ProductChecker(self.db.get_data())
 
-    def run(self):
-        st.set_page_config(page_title="Bycott Buddy", page_icon="🛍️", layout="centered")
+    def load_css(self):
+        """Load CSS from an external file and apply it"""
+        css_path = os.path.join(os.path.dirname(__file__), "styles.css")
+        with open(css_path) as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-        # --- Clean Professional Styling ---
-        st.markdown("""
-            <style>
-            body {
-                background-color: #f5f7fa;
-                font-family: 'Segoe UI', sans-serif;
-            }
-            .main-title {
-                font-size: 2.5rem;
-                font-weight: 700;
-                color: #222;
-                text-align: center;
-                margin-top: 40px;
-                margin-bottom: 10px;
-            }
-            .subtitle {
-                font-size: 1rem;
-                color: #555;
-                text-align: center;
-                margin-bottom: 30px;
-            }
-            .stTextInput input {
-                font-size: 1rem;
-                padding: 10px;
-            }
-            .stButton > button {
-                background-color: #007bff;
-                color: white;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 6px;
-                font-size: 1rem;
-                margin-top: 10px;
-            }
-            .footer {
-                text-align: center;
-                font-size: 0.9rem;
-                color: #777;
-                margin-top: 40px;
-            }
-            </style>
-        """, unsafe_allow_html=True)
+    def display_header(self):
+        st.markdown("<h1>Bycott Buddy 🕵️‍♂️</h1>", unsafe_allow_html=True)
+        st.markdown("<h4>Say NO to Israeli Products — Explore Local Alternatives</h4>", unsafe_allow_html=True)
+        st.markdown("---")
 
-        # --- UI Layout ---
-        st.markdown("<div class='main-title'>Bycott Buddy 🛍️</div>", unsafe_allow_html=True)
-        st.markdown("<div class='subtitle'> 🔎 Check if a product is Israeli and explore alternatives</div>", unsafe_allow_html=True)
-
-        product_input = st.text_input("Enter Product Name 👇")
+    def main_interface(self):
+        product_input = st.text_input("🔍 Enter a product  name to check if it's Israeli and explore local substitutes.", "")
 
         if product_input:
             is_israeli, msg, alt = self.checker.check(product_input)
-
             if is_israeli is None:
                 st.warning(msg)
             elif is_israeli:
                 st.error(msg)
-                if alt:
-                    st.success(alt)
+                st.success(alt)
             else:
                 st.success(msg)
 
         if st.button("Exit"):
-            st.info("Thanks for using Bycott Buddy!")
+            st.info("Thanks for using Bycott Buddy! 🙏")
             st.stop()
 
-        st.markdown("<div class='footer'>Made with ❤️ by <b>Anam Anwer</b><br>Support the Palestinian cause.</div>", unsafe_allow_html=True)
+    def display_footer(self):
+        st.markdown(
+            """
+            <hr/>
+            <footer>
+                Made with ❤️ by <strong>Anam Anwer</strong><br>
+                <em>Support the Palestinian cause — say no to Israeli products.</em>
+            </footer>
+            """,
+            unsafe_allow_html=True
+        )
 
-# --- Run the app ---
+    def run(self):
+        # Call set_page_config() as the first Streamlit command
+        st.set_page_config(page_title="Bycott Buddy", page_icon="🛍️")
+
+        self.load_css()  # Load the CSS file
+        self.display_header()
+        self.main_interface()
+        self.display_footer()
+
+# Run the app
 if __name__ == "__main__":
     app = BycottBuddyApp()
     app.run()
